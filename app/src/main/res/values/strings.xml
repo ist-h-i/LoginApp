@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Login App</string>
+    <string name="login" translatable="false">Login</string>
+    <string name="userId">Mail Address</string>
+    <string name="password">Password</string>
+    <string name="inputUserInfo">ユーザ情報を入力してください。</string>
+    <string name="loginSuccess">ログインに成功しました。</string>
+    <string name="loginFailed">ログインに失敗しました。</string>
+    <string name="unknownError">ネットワークエラーが発生しました。\n時間をおいて再度お試しください。</string>
+    <string name="forgetPassword"><u>パスワードリセットはこちら</u></string>
+    <string name="signup"><u>新規登録はこちら</u></string>
+</resources>

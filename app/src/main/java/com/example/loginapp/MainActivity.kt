@@ -8,8 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.amazonaws.auth.CognitoCachingCredentialsProvider
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMappingException
-import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBQueryExpression
 import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBScanExpression
+import com.amazonaws.regions.Region
 import com.amazonaws.regions.Regions
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient
@@ -32,6 +32,8 @@ class MainActivity : AppCompatActivity() {
 
         // DynamoDBクライアント
         val ddbClient: AmazonDynamoDB = AmazonDynamoDBClient(credentialsProvider)
+        // デフォルトではUS-EASTがリージョンで指定されてしまうため意図的にAP_NORTHEASTに設定
+        ddbClient.setRegion(Region.getRegion(Regions.AP_NORTHEAST_1))
         val ddbMapper = DynamoDBMapper.builder().dynamoDBClient(ddbClient).build()
 
         // レイアウト紐付け

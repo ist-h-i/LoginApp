@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         // DynamoDBクライアント
         val ddbClient: AmazonDynamoDB = AmazonDynamoDBClient(credentialsProvider)
-        // デフォルトではUS-EASTがリージョンで指定されてしまうため意図的にAP_NORTHEASTに設定
+        // デフォルトではUS-EASTリージョンでクライアント作成されてしまうため明示的にAP_NORTHEASTに設定
         ddbClient.setRegion(Region.getRegion(Regions.AP_NORTHEAST_1))
         val ddbMapper = DynamoDBMapper.builder().dynamoDBClient(ddbClient).build()
 
